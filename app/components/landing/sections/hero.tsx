@@ -6,7 +6,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero-section"
-      className="relative w-full min-h-screen lg:min-h-[50vw] overflow-hidden bg-[#0a0a0a] flex flex-col"
+      className="relative w-full min-h-screen overflow-hidden bg-[#0a0a0a] flex flex-col"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-[1] opacity-35">
@@ -23,63 +23,67 @@ export const HeroSection = () => {
       {/* Navbar */}
       <Navbar />
 
-      {/* Hero Content */}
-      <div className="relative z-[2] flex-1 flex flex-col items-center justify-end w-full px-5 pb-8 sm:px-6 md:px-10 lg:px-[5vw] md:pb-[50px] lg:pb-[4vw]">
-        {/* Lady Image */}
-        <div
-          className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] pointer-events-none md:top-1/2 lg:top-[50%]"
-          id="hero-lady"
+      {/* Lady Image — z[3], sits between STYLE/UTION (z5) and VOL (z2) */}
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[3] pointer-events-none"
+        id="hero-lady"
+      >
+        <Image
+          src="/images/hero/lady.png"
+          alt="3D Fashion mannequin wearing colorful draped fabric"
+          width={700}
+          height={1100}
+          priority
+          quality={95}
+          className="w-auto object-contain object-bottom"
+          style={{ height: "90vh" }}
+        />
+      </div>
+
+      {/* Heading — absolutely centered in the viewport */}
+      <div
+        className="absolute inset-x-0 z-[2] flex items-center justify-center"
+        style={{ top: "50%", transform: "translateY(-50%)" }}
+      >
+        <h1
+          id="hero-heading"
+          className="font-[var(--font-heading)] font-black leading-[0.9] tracking-[-0.02em] uppercase text-white text-center w-full select-none"
+          style={{ fontSize: "clamp(56px, 13.8vw, 220px)" }}
         >
-          <Image
-            src="/images/hero/lady.png"
-            alt="3D Fashion mannequin wearing colorful draped fabric"
-            width={600}
-            height={800}
-            priority
-            quality={95}
-            className="w-auto h-auto max-h-[75vh] sm:max-h-[60vh] md:max-h-[75vh] lg:max-h-[40vw] object-contain"
-          />
-        </div>
+          {/* STYLE — in front of lady */}
+          <span className="relative z-[5]">STYLE</span>
+          {/* VOL — behind the lady, muted */}
+          <span className="relative z-[2] text-white/30">VOL</span>
+          {/* UTION — in front of lady */}
+          <span className="relative z-[5]">UTION</span>
+        </h1>
+      </div>
 
-        {/* Text Block */}
-        <div className="relative z-[3] w-full flex flex-col gap-4 md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-5">
-          {/* Heading */}
-          <h1
-            id="hero-heading"
-            className="font-[var(--font-heading)] font-black text-[clamp(36px,13vw,58px)] sm:text-[clamp(40px,12vw,68px)] md:text-[clamp(48px,9vw,90px)] lg:text-[8.5vw] leading-[0.95] tracking-[-0.03em] uppercase"
-          >
-            <span className="text-white">STYLE</span>
-            <span className="text-[#e8961e]">VOLUTION</span>
-          </h1>
+      {/* Bottom content: description + arrow */}
+      <div className="relative z-[5] mt-auto w-full pb-8 md:pb-10 lg:pb-[3vw]">
+        <div className="relative w-full px-4 sm:px-6 md:px-10 lg:px-[3vw]">
 
-          {/* Description */}
-          <div className="max-w-full md:max-w-[320px] lg:max-w-none md:pb-2">
+          {/* Description — bottom right */}
+          <div className="ml-auto mr-16 md:mr-20 lg:mr-[5vw] max-w-[260px] md:max-w-[300px] lg:max-w-[20vw]">
             <p
               id="hero-description"
-              className="text-white/75 text-sm md:text-[15px] lg:text-[1.15vw] leading-relaxed text-center w-full md:text-left lg:max-w-[25vw]"
+              className="text-white/70 text-sm md:text-[15px] lg:text-[1.05vw] leading-relaxed text-left"
               style={{ fontFamily: "var(--font-body)" }}
             >
               From sketch to digital masterpiece—
               <strong className="text-[#e8961e] font-bold">our 3D</strong>
-              <br />
-              software turns your ideas into
-              <br />
-              wearable art.
+              {" "}software turns your ideas into wearable art.
             </p>
           </div>
-        </div>
 
-        {/* Scroll Down Arrow */}
-        <div
-          className="relative flex justify-center w-full mt-6 md:absolute md:bottom-0 md:right-10 lg:right-[10vw] lg:bottom-[2vw] md:w-auto md:mt-0"
-          id="hero-scroll-down"
-        >
+          {/* Scroll Arrow */}
           <a
             href="#choose-section"
-            className="flex items-center justify-center w-11 h-11 md:w-12 md:h-12 lg:w-[4vw] lg:h-[4vw] rounded-full border-2 border-[#e8961e] text-[#e8961e] transition-all duration-250 hover:bg-[#e8961e]/10 hover:translate-y-[3px]"
+            id="hero-scroll-down"
+            className="absolute right-4 sm:right-6 md:right-10 lg:right-[3vw] top-1/2 -translate-y-1/2 flex items-center justify-center w-11 h-11 md:w-12 md:h-12 lg:w-[3vw] lg:h-[3vw] rounded-full bg-[#1a1a1a] border border-[#e8961e] text-[#e8961e] transition-all duration-300 hover:bg-[#e8961e]/15 hover:translate-y-[calc(-50%+3px)]"
             aria-label="Scroll down"
           >
-            <FiArrowDown className="w-5 h-5 lg:w-[1.5vw] lg:h-[1.5vw]" />
+            <FiArrowDown className="w-4 h-4 lg:w-[1.1vw] lg:h-[1.1vw]" />
           </a>
         </div>
       </div>
