@@ -9,8 +9,8 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-[100] px-5 py-5 sm:px-6 md:px-10 md:py-6" id="navbar">
-      <div className="flex items-center justify-between max-w-[1400px] mx-auto">
+    <nav className="absolute top-0 left-0 right-0 z-[100] px-5 py-5 sm:px-6 lg:px-[5vw] md:py-6 lg:py-[2vw]" id="navbar">
+      <div className="flex items-center justify-between mx-auto">
         {/* Logo */}
         <a href="/" className="relative z-10 flex items-center" id="navbar-logo">
           <Image
@@ -19,25 +19,25 @@ export const Navbar = () => {
             width={120}
             height={40}
             priority
-            className="h-8 md:h-[38px] w-auto"
+            className="h-8 md:h-[38px] lg:h-[3vw] w-auto"
           />
         </a>
 
         {/* Desktop Actions */}
         <div
-          className="hidden md:flex items-center gap-2 rounded-full border border-white/[0.08] bg-[#1a1a1a] pl-7 pr-2 py-2"
+          className="hidden md:flex items-center gap-2 lg:gap-[0.5vw] rounded-full border border-white/[0.08] bg-[#1a1a1a] pl-7 pr-2 py-2 lg:pl-[2vw] lg:pr-[0.5vw] lg:py-[0.5vw]"
           id="navbar-actions-desktop"
         >
           <a
             href="/login"
-            className="font-[var(--font-heading)] font-semibold text-sm text-white px-4 py-2 transition-opacity duration-200 hover:opacity-80"
+            className="font-[var(--font-heading)] font-semibold text-sm lg:text-[1vw] text-white px-4 py-2 lg:px-[1.5vw] lg:py-[0.8vw] transition-opacity duration-200 hover:opacity-80"
             id="navbar-login"
           >
             Log In
           </a>
           <a
             href="/register"
-            className="font-[var(--font-heading)] font-bold text-sm text-white bg-[#e8961e] rounded-full px-7 py-3 transition-all duration-250 hover:bg-[#d4870f] hover:-translate-y-0.5"
+            className="font-[var(--font-heading)] font-bold text-sm lg:text-[1vw] text-white bg-[#e8961e] rounded-full px-7 py-3 lg:px-[2.4vw] lg:py-[1vw] transition-all duration-250 hover:bg-[#d4870f] hover:-translate-y-0.5"
             id="navbar-start-designing"
           >
             Start Designing
