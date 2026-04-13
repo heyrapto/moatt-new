@@ -5,7 +5,7 @@ import { FaApple } from "react-icons/fa6";
 
 export default function RegisterPage() {
   return (
-    <main className="flex flex-col lg:flex-row min-h-screen bg-white font-[var(--font-nunito-sans)]">
+    <main className="flex flex-col lg:flex-row min-h-screen bg-white ">
       {/* Left Column: Registration Form */}
       <div className="w-full lg:w-[45%] xl:w-[42%] flex flex-col p-6 sm:p-10 lg:p-14 xl:p-20 overflow-y-auto">
         {/* Logo */}

@@ -42,7 +42,7 @@ export const HeroSection = () => {
 
       {/* Heading — absolutely centered in the viewport */}
       <div
-        className="absolute inset-x-0 z-[2] flex items-center justify-center"
+        className="absolute inset-x-0 z-[5] flex items-center justify-center"
         style={{ top: "50%", transform: "translateY(-50%)" }}
       >
         <h1
@@ -50,11 +50,8 @@ export const HeroSection = () => {
           className="font-[var(--font-heading)] font-black leading-[0.9] tracking-[-0.02em] uppercase text-white text-center w-full select-none"
           style={{ fontSize: "clamp(56px, 13.8vw, 220px)" }}
         >
-          {/* STYLE — in front of lady */}
           <span className="relative z-[5]">STYLE</span>
-          {/* VOL — behind the lady, muted */}
           <span className="relative z-[2] text-white/30">VOL</span>
-          {/* UTION — in front of lady */}
           <span className="relative z-[5]">UTION</span>
         </h1>
       </div>
@@ -63,8 +60,11 @@ export const HeroSection = () => {
       <div className="relative z-[5] mt-auto w-full pb-8 md:pb-10 lg:pb-[3vw]">
         <div className="relative w-full px-4 sm:px-6 md:px-10 lg:px-[3vw]">
 
-          {/* Description — bottom right */}
-          <div className="ml-auto mr-16 md:mr-20 lg:mr-[5vw] max-w-[260px] md:max-w-[300px] lg:max-w-[20vw]">
+          {/* Description — pushed down from heading with breathing room */}
+          <div
+            className="ml-auto mr-16 md:mr-20 lg:mr-[5vw] max-w-[260px] md:max-w-[300px] lg:max-w-[20vw]"
+            style={{ marginBottom: "calc(50vh - 18vw)" }}
+          >
             <p
               id="hero-description"
               className="text-white/70 text-sm md:text-[15px] lg:text-[1.05vw] leading-relaxed text-left"
@@ -72,21 +72,22 @@ export const HeroSection = () => {
             >
               From sketch to digital masterpiece—
               <strong className="text-[#e8961e] font-bold">our 3D</strong>
-              {" "}software turns your ideas into wearable art.
+              {" "}software turns your ideas into <br /> wearable art.
             </p>
           </div>
 
-          {/* Scroll Arrow */}
-          <a
-            href="#choose-section"
-            id="hero-scroll-down"
-            className="absolute right-4 sm:right-6 md:right-10 lg:right-[3vw] top-1/2 -translate-y-1/2 flex items-center justify-center w-11 h-11 md:w-12 md:h-12 lg:w-[3vw] lg:h-[3vw] rounded-full bg-[#1a1a1a] border border-[#e8961e] text-[#e8961e] transition-all duration-300 hover:bg-[#e8961e]/15 hover:translate-y-[calc(-50%+3px)]"
-            aria-label="Scroll down"
-          >
-            <FiArrowDown className="w-4 h-4 lg:w-[1.1vw] lg:h-[1.1vw]" />
-          </a>
         </div>
+
+        {/* Scroll Arrow — independent, absolute bottom right of section */}
+        <a
+          href="#choose-section"
+          id="hero-scroll-down"
+          className="absolute right-4 sm:right-6 md:right-10 lg:right-[3vw] bottom-8 md:bottom-10 lg:bottom-[3vw] flex items-center justify-center w-11 h-11 md:w-12 md:h-12 lg:w-[3vw] lg:h-[3vw] rounded-full bg-white text-[#e8961e] transition-all duration-300  hover:translate-y-[3px]"
+          aria-label="Scroll down"
+        >
+          <FiArrowDown className="w-4 h-4 lg:w-[1.1vw] lg:h-[1.1vw]" />
+        </a>
       </div>
-    </section>
+    </section >
   );
 };
