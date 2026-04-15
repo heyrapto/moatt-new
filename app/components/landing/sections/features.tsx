@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LadyHeroScene } from "../3d/LadyScene";
 
 const features = [
   {
@@ -63,16 +64,10 @@ export const FeaturesSection = () => {
           </div>
 
           {/* ======== CENTER — LADY ======== */}
-          <div className="relative flex-1 flex items-end justify-center flex-shrink-0">
-            <Image
-              src="/images/features/lady.png"
-              alt="3D mannequin showcasing garment visualization"
-              width={500}
-              height={1000}
-              quality={95}
-              className="w-auto object-contain object-bottom"
-              style={{ height: "93vh" }}
-            />
+          <div className="relative flex-1 flex items-stretch justify-center flex-shrink-0 pointer-events-none">
+            <div className="w-full h-[95vh] mt-[-5vh]">
+                <LadyHeroScene />
+            </div>
           </div>
 
           {/* ======== RIGHT — CALLOUTS ======== */}
